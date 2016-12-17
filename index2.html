@@ -1,0 +1,187 @@
+<html>
+<head> </head>
+<style> 
+body {
+	background: #4682B4	;
+}
+.water_content{
+    position: relative;
+
+    vertical-align: middle;
+
+    display: inline-block;
+	
+	z-index: -1;
+	
+}
+
+.water, .water:before, .water:after {
+  height: 15px;
+  width: 15px;
+  
+  display: block;
+  
+  border-radius: 2px;
+
+  animation: water 4s infinite;
+  animation-delay: 3s;
+   
+
+}
+.water:before, .water:after {
+  content: '';
+  position: absolute;
+}
+
+
+@keyframes water {
+  0% {
+    box-shadow: 0 0 0 0 transparent,
+                0 0 0 0 transparent,
+                0 0 0 0 transparent,
+                0 0 0 0 transparent;
+				z-index: -1;
+  }
+  5% {
+    box-shadow: 0 0 0 0 lightblue,
+                0 0 0 0 rgba(255, 255, 255, .4),
+                0 0 0 0 lightblue,
+                0 0 0 0 rgba(0, 0, 0, .08);
+				z-index: -1;
+  }
+  100% {
+    box-shadow: 0 0 40px 1660px lightblue,
+                0 0 10px 1660px transparent,
+                0 0 30px 1660px lightblue,
+                0 0 5px  1660px transparent;
+				z-index: -1;
+  }
+
+}
+@keyframes start {
+    from {
+        opacity: 0;
+        transform: scale(9);
+		z-index: -1;
+    }
+    to {
+        opacity: 1;
+        transform: scale(5);
+		z-index: -1;
+    }
+}
+@keyframes icon {
+    from {
+        opacity: 0;
+        -webkit-filter: blur(15px);     
+		z-index: -1;
+    }
+    to {
+        opacity: 1;
+        -webkit-filter: blur(0); 
+		z-index: -1;
+    }
+}
+</style>
+<script src="jquery.js"></script>
+<body>
+<div class="water">
+<div id="content"></div>
+
+
+  <script>
+
+ let kxzi1 = [
+ { 		question: "What should we write in order to specify that our file is HTML?",
+ 			answer: ["<html>","<!DOCTYPE html>","<!DOCTYPE>"]
+ },
+ {		question: "What symbol is used for id-s/class-s?",
+ 			answer: ["*/.","#/;","#/."]
+ },
+ {		question: "What does <br /> do?",
+ 			answer: ["Change the line", "Stay in the same line", "close the <p> tag"]
+ },
+ {		question: "In what tag we keep our code that will be shown in the screen?",
+ 			answer: ["<head>","<body>","<script>"] 					
+ },
+ {		question: 'What tag should be used for declaring a link?',
+ 			answer: ['<span>',"<a href = '...' ","<href>"]
+ }
+ ]
+
+  let kxzi2 = [
+ { 		question: "Is CSS a function??",
+ 			answer: ["Yes ","Maybe","No"]
+ },
+ {		question: "For what is CSS used?",
+ 			answer: ["To put content on webpage","To describe HTML elements","To describe main information about webpage"]
+ },
+ {		question: "Which of the following is connected with CSS code?",
+ 			answer: ["color: red","console.log()","function"]
+ },
+ {		question: "What code should be used to chenge the size of the letter?",
+ 			answer: ["font: 100%","size: 100px","font-size: 100px"] 					
+ },
+ {		question: "What code should be used to disable scrolling?",
+ 			answer: ["overflow:auto","overflow:hidden","margin: khcho"]
+ }
+ ]
+ let kxzi3 = [
+ { 		question: "What should we write to print something in the console?",
+ 			answer: ["print();","console.write();","console.log();"]
+ },
+ {		question: "What is recursion?",
+ 			answer: ["Function which calls itself","Function for calculating sum of integers","Function used for connecting strings"]
+ },
+ {		question: "What is the difference between let and const?",
+ 			answer: ["Let can only store integers","Const can't be changed","There is no difference"]
+ },
+ {		question: "const a = function(n){return a(n); } a(5);",
+ 			answer: ["a","5","a(n)"] 					
+ },
+ {		question: "Which of the following is a library of JavaScript",
+ 			answer: ["Java","JQuery","MathJS"]
+ }
+ ]
+let kxzi4 = [
+ { 		question: "Should any Java file have a Class?",
+ 			answer: ["No","It depends on File","Yes"]
+ },
+ {		question: "What does Void do?",
+ 			answer: ["Its discribe function which return something","Its discribe function which does not return anything","Makes function privet"]
+ },
+ {		question: "What is the difference between System.out.print() and System.out.println()?",
+ 			answer: ["System.out.println() print data on the next line, System.out.print() Not","they are the same function","They both are useless"]
+ },
+ {		question: "How we call functions in Java?",
+ 			answer: ["String","Function","Method"] 					
+ },
+ {		question: "Is Java a part of JavaScript?",
+ 			answer: ["Absolutely Yes!","Definitely No!","Nobody Knows!"]
+ }
+ ]
+
+
+  let kxziner = [kxzi1,kxzi2,kxzi3,kxzi4];
+
+
+ 	let content = $("#content");
+
+ 	kxzi2.forEach(function(el,index){
+		 		let qa = $('<div class="'+index + 1+'"><p style="color:red;font-size:25px">Question '+ ++index+'</p><div style="border:2px solid black;height:50px;width:1000px;font-size:25px;background-color:rgb(255, 200, 50);border-radius:15px">'+ el.question+ '</div>'+'</br><div style="background-color:rgb(190, 255, 150);border-radius:25px;width:950px"> <input name="sameName" id="firstRadio" type="radio" style="width:20px;height:20px">'+ el.answer[0]+ '</input></div><br /><div style="background-color:rgb(190, 255, 150);border-radius:25px;width:950px"><input name="sameName" id="firstRadio" type="radio" style="width:20px;height:20px">' +el.answer[1] +'</input></div><br /><div style="background-color:rgb(190, 255, 150);border-radius:25px;width:950px"><input name="sameName" id="firstRadio" type="radio" style="width:20px;height:20px">'+ el.answer[2] +'</input></div><br /></div>');
+				content.append(qa);
+	})
+		content.append('<a href="Island4.html"><input type="submit" value="submit"style="margin-left:1120px;width:100px;height:40px;font-size:25px;margin-top:-40px" id ="submit"></input></a>');
+		content.append('<a href="Island1.html"><input type="submit" value="back" style="margin-left:1000px;width:100px;height:40px;font-size:25px;margin-top:-40px" id ="back"></input></a>')
+
+
+
+		$("#submit").click(function(){
+		alert("Correct answers !!! 5/5");
+		CorrectAnswer();
+		})
+
+ </script>
+ </div>
+</body>
+</html>

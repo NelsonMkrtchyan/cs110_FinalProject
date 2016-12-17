@@ -1,0 +1,123 @@
+<html>
+<head></head>
+
+<script src="jquery.js"></script>
+
+<style> 
+body {
+
+background-image: url("images/WaterGif.gif");
+
+}
+</style> 
+
+<body >
+<!-- style="background-color:#4687FF;overflow:hidden" -->
+ <!-- style="background-color:#0041C2;overflow:hidden" -->
+   <div class="water">
+  <img src='images/4.png' style='position:fixed;top:0px;left:0px;width:100%;height:100%;'>
+  <a href="index.html"><img src="images/33.png" style="width=50px;height:50px;margin-top: 625px;margin-left:57px;position:fixed" id= "sunduk1"/></a>
+  <a href="index2.html"><img src="images/33.png" style="width=50px;height:50px;margin-top: 405px;margin-left:265px;position:fixed" id= "sunduk2"/></a>
+  <a href="index3.html"><img src="images/33.png" style="width=50px;height:50px;margin-top: 330px;margin-left:1100px;position:fixed" id= "sunduk3"/></a>
+  <a href="index4.html"><img src="images/33.png" style="width=50px;height:50px;margin-top: 590px;margin-left:1300px;position:fixed" id= "sunduk4"/></a>
+  
+ <script>
+ 
+    $(document).ready(function() {
+	 	 $("#sunduk1").mouseover(function() {
+	     $(this).css({"width" : "80px","height" : "80px"});
+	 });
+	    $("#sunduk1").mouseleave(function(){
+        $(this).css({"width" : "50px","height" : "50px"});
+});
+$("#sunduk2").mouseover(function() {
+	     $(this).css({"width" : "80px","height" : "80px"});
+	 });
+	    $("#sunduk2").mouseleave(function(){
+        $(this).css({"width" : "50px","height" : "50px"});
+});
+$("#sunduk3").mouseover(function() {
+	     $(this).css({"width" : "80px","height" : "80px"});
+	 });
+	    $("#sunduk3").mouseleave(function(){
+        $(this).css({"width" : "50px","height" : "50px"});
+});
+$("#sunduk4").mouseover(function() {
+	     $(this).css({"width" : "80px","height" : "80px"});
+	 });
+	    $("#sunduk4").mouseleave(function(){
+        $(this).css({"width" : "50px","height" : "50px"});
+});
+	 });
+
+ const poncho1 = function(){
+          $.ajax({
+          url: "/index.html",
+          type: "get",
+          success: function(inData){
+            $(document.body).replaceWith(inData);
+          },
+          error: function(){
+              alert("Something went wrong");
+          }
+      });
+    };
+
+    const poncho2 = function(){
+          $.ajax({
+          url: "/index2.html",
+          type: "get",
+          success: function(inData){
+            $(document.body).replaceWith(inData);
+          },
+          error: function(){
+              alert("Something went wrong");
+          }
+      });
+    };
+
+    const poncho3 = function(){
+          $.ajax({
+          url: "/index3.html",
+          type: "get",
+          success: function(inData){
+            $(document.body).replaceWith(inData);
+          },
+          error: function(){
+              alert("Something went wrong");
+          }
+      });
+    };
+
+    const poncho4 = function(){
+          $.ajax({
+          url: "/index4.html",
+          type: "get",
+          success: function(inData){
+            $(document.body).replaceWith(inData);
+          },
+          error: function(){
+              alert("Something went wrong");
+          }
+      });
+    };
+
+
+$("#sunduk1").click(function(){
+  poncho1();  
+});
+$("#sunduk2").click(function(){
+  poncho2();  
+});
+$("#sunduk3").click(function(){
+  poncho3();  
+})
+$("#sunduk4").click(function(){
+  poncho4();  
+})
+
+	
+</script>
+  </div>
+</body>
+</html>
